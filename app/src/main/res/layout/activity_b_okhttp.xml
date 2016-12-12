@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/b_okhttp_one_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="get和post请求"/>
+
+    <Button
+        android:id="@+id/b_okhttp_two_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用httpUtils的get和post请求"/>
+
+    <TextView
+        android:id="@+id/b_okhttp_one_text"
+        android:layout_below="@id/b_okhttp_one_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="..." />
+
+    <Button
+        android:id="@+id/b_okhttp_three_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用httpUtils的下载文件"/>
+
+    <ProgressBar
+        android:id="@+id/b_okhttp_three_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        />
+
+    <Button
+        android:id="@+id/b_okhttp_four_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用httpUtils的多文件上传，需要服务器"/>
+
+    <Button
+        android:id="@+id/b_okhttp_five_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用httpUtils的图片请求"/>
+
+    <ImageView
+        android:id="@+id/b_okhttp_five_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/b_okhttp_six_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用httpUtils的图片列表请求"/>
+
+
+</LinearLayout>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/a_rxjava_one_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Scheduler问题"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/a_rxjava_one_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_one_title"
+            android:onClick="a_rxjava_one_button"
+            android:text="进度条——撼地者" />
+
+        <ProgressBar
+            android:id="@+id/a_rxjava_one_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_one_button"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/a_rxjava_two_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_one_progress"
+            android:onClick="a_rxjava_two_button"
+            android:text="进度条，数据map双转换——回音击" />
+
+        <ProgressBar
+            android:id="@+id/a_rxjava_two_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_two_button"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/a_rxjava_two_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_two_progress"
+            android:layout_centerHorizontal="true"
+            android:text="操作符operation"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/a_rxjava_three_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_two_title"
+            android:onClick="a_rxjava_three_button"
+            android:text="简单的Repeat——沟壑" />
+
+        <Button
+            android:id="@+id/a_rxjava_four_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_three_button"
+            android:onClick="a_rxjava_four_button"
+            android:text="RepeatWhen——回音击" />
+
+        <Button
+            android:id="@+id/a_rxjava_five_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_four_button"
+            android:onClick="a_rxjava_five_button"
+            android:text="Interval——余震" />
+
+        <Button
+            android:id="@+id/a_rxjava_six_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_five_button"
+            android:onClick="a_rxjava_six_button"
+            android:text="Timer——ES" />
+
+        <TextView
+            android:id="@+id/a_rxjava_three_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_six_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="操作符operation之天梯1500+"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/a_rxjava_seven_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_three_title"
+            android:onClick="a_rxjava_seven_button"
+            android:text="flatmap——羊刀" />
+
+        <Button
+            android:id="@+id/a_rxjava_eight_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_seven_button"
+            android:onClick="a_rxjava_eight_button"
+            android:text="concatmap——冰甲" />
+
+        <Button
+            android:id="@+id/a_rxjava_nine_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_eight_button"
+            android:onClick="a_rxjava_nine_button"
+            android:text="switchmap——蓝杖" />
+
+        <Button
+            android:id="@+id/a_rxjava_ten_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_nine_button"
+            android:onClick="a_rxjava_ten_button"
+            android:text="Buffer——秘法鞋" />
+
+        <TextView
+            android:id="@+id/a_rxjava_four_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_ten_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="操作符operation之天梯1800+"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/a_rxjava_four_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_four_title"
+            android:hint="Coming"/>
+
+        <EditText
+            android:id="@+id/a_rxjava_four_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_four_text"
+            android:hint="过滤掉时间间隔太短的操作" />
+
+        <TextView
+            android:id="@+id/a_rxjava_five_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_four_edit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="操作符operation之天梯2000+"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/a_rxjava_eleven_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_five_title"
+            android:onClick="a_rxjava_eleven_button"
+            android:text="Polling——大炮" />
+
+        <TextView
+            android:id="@+id/a_rxjava_five_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_eleven_button"
+            android:hint="Coming"/>
+
+        <Button
+            android:id="@+id/a_rxjava_twelve_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a_rxjava_five_text"
+            android:onClick="a_rxjava_twelve_button"
+            android:text="Retrofit——3800" />
+
+    </RelativeLayout>
+</ScrollView>

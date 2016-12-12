@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#44000000">
+
+    <com.example.liwenguang.lwg.c_CustomView.Custom_z_j_SlideLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff0000">
+
+        <include android:id="@+id/c_j_menu" layout="@layout/item_custom_j_menu" />
+        <include android:id="@+id/c_j_content" layout="@layout/item_custom_j_content" />
+
+    </com.example.liwenguang.lwg.c_CustomView.Custom_z_j_SlideLayout>
+
+</RelativeLayout>

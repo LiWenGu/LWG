@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.liwenguang.lwg">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".a_Rxjava.BaseOperationActivity" />
+        <activity android:name=".b_Okhttp.OkHttpActivity" />
+        <activity android:name=".b_Okhttp.OkHttpListActivity" />
+        <activity android:name=".c_CustomView.Custom_Mainactivity" />
+        <activity android:name=".c_CustomView.Custom_z_a_photoactivity" />
+        <activity android:name=".c_CustomView.Custom_z_b_adactivity" />
+        <activity android:name=".c_CustomView.Custom_z_c_popactivity" />
+        <activity android:name=".c_CustomView.Custom_z_d_activity" />
+        <activity android:name=".c_CustomView.Custom_z_e_activity" />
+        <activity android:name=".c_CustomView.Custom_z_f_activity" />
+        <activity android:name=".c_CustomView.Custom_z_h_activity" />
+        <activity android:name=".c_CustomView.Custom_z_i_activity" />
+        <activity android:name=".c_CustomView.Custom_z_j_activity" />
+        <activity android:name=".c_CustomView.Custom_z_k_main" />
+        <activity android:name=".d_H5.H5_Activity" />
+        <activity android:name=".d_H5.H5_z_a_JavaAndJsCall" />
+        <activity android:name=".d_H5.H5_z_b_JsCallJavaVideoActivity" />
+        <activity android:name=".d_H5.H5_z_c_JsCallJavaCallPhoneActivity" />
+        <activity android:name=".e_Project.Project_Activity" />
+    </application>
+
+</manifest>

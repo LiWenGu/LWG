@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--定义名字叫Custom_z_e_attrs的属性集合-->
+    <declare-styleable name="Custom_z_e_attrs">
+        <!--定义名字叫name,类型是string的属性-->
+        <attr name="my_name" format="string" />
+        <attr name="my_age" format="integer" />
+        <attr name="my_bg" format="reference|color" />
+
+    </declare-styleable>
+</resources>

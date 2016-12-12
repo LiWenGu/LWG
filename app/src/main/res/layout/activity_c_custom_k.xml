@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.liwenguang.lwg.c_CustomView.Custom_z_k_Layout1 xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.example.liwenguang.lwg.c_CustomView.Custom_z_k_View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="asdasd" />
+
+
+</com.example.liwenguang.lwg.c_CustomView.Custom_z_k_Layout1>

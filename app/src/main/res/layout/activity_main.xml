@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    android:orientation="vertical">
+
+    <Button
+        android:text="第一关：RxJava之谜"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="first_Rxjava" />
+
+    <Button
+        android:text="第二关：Okhttp之谜"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="second_okhttp" />
+
+    <Button
+        android:text="第三关：View之谜"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="third_CustomView" />
+
+    <Button
+        android:text="第四关：H5之谜"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="fourth_AndroidH5" />
+
+    <Button
+        android:text="第五关：项目之谜"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="fifth_Project" />
+</LinearLayout>

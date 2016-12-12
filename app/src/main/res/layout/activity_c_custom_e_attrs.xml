@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp">
+
+    <com.example.liwenguang.lwg.c_CustomView.Custom_z_e_attrs
+        app:my_age = "100"
+        app:my_name = "android"
+        app:my_bg = "@drawable/c_e_jtx"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" />
+
+</RelativeLayout>

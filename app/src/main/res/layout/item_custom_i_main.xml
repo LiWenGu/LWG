@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.liwenguang.lwg.c_CustomView.Custom_z_i_SlideLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    >
+
+    <include android:id="@+id/c_i_item_content" layout="@layout/item_custom_i_content" />
+    <include android:id="@+id/c_i_item_menu" layout="@layout/item_custom_i_menu" />
+
+</com.example.liwenguang.lwg.c_CustomView.Custom_z_i_SlideLayout>

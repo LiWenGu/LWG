@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        applicationId "com.example.liwenguang.lwg"
+        minSdkVersion 22
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'io.reactivex:rxjava:1.1.6'
+    compile 'io.reactivex:rxandroid:1.0.1' //对android的支持，例如observeOn(AndroidSchedulers.mainThread())
+    compile 'com.jakewharton.rxbinding:rxbinding:0.2.0'  //对RxTextView支持，RxBinding 是 Jake Wharton 的一个开源库，它提供了一套在 Android 平台上的基于 RxJava的 Binding API。所谓 Binding，就是类似设置 OnClickListener 、设置 TextWatcher 这样的注册绑定对象的 API
+    compile 'com.squareup.retrofit2:retrofit:+'   //基本retrofit语法支持
+    compile 'com.squareup.retrofit2:converter-gson:+'  //对返回数据Gson支持 GsonConverterFactory
+    compile 'com.squareup.retrofit2:adapter-rxjava:+' //retrofit和rxjava数据请求返回的联合 RxJavaCallAdapterFactory
+    compile 'com.squareup.okhttp3:okhttp:3.4.2'         //okhttp
+    compile 'com.squareup.okio:okio:1.11.0'             //okhttp依赖
+    compile 'com.zhy:okhttputils:2.6.2'                //okhttp封装的工具开源类
+    compile 'com.belerweb:pinyin4j:2.5.0'              //中文转化为拼音
+    testCompile 'junit:junit:4.12'
+}
