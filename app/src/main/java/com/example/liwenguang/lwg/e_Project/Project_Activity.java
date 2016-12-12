@@ -1,5 +1,6 @@
 package com.example.liwenguang.lwg.e_Project;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -38,6 +39,8 @@ public class Project_Activity extends AppCompatActivity implements View.OnClickL
     }
 
     private void e_a_tianqi() {
-
+        Intent intent = new Intent();
+        intent.setClassName("com.example.coolweather", "com.example.coolweather.MainActivity");
+        startActivity(intent);
     }
 }
