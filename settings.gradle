@@ -1,1 +1,1 @@
-include ':app', ':事件分发小案例', ':learnjni', ':coolweather'
+include ':app', ':事件分发小案例', ':learnjni', ':coolweather', ':materialtest', ':pulltorefershtest'

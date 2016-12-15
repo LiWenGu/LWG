@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/coolweather/coolweather.iml" filepath="$PROJECT_DIR$/coolweather/coolweather.iml" />
       <module fileurl="file://$PROJECT_DIR$/learnjni/learnjni.iml" filepath="$PROJECT_DIR$/learnjni/learnjni.iml" />
+      <module fileurl="file://$PROJECT_DIR$/materialtest/materialtest.iml" filepath="$PROJECT_DIR$/materialtest/materialtest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pulltorefershtest/pulltorefershtest.iml" filepath="$PROJECT_DIR$/pulltorefershtest/pulltorefershtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/事件分发小案例/事件分发小案例.iml" filepath="$PROJECT_DIR$/事件分发小案例/事件分发小案例.iml" />
     </modules>
   </component>

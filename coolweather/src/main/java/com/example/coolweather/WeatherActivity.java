@@ -1,5 +1,6 @@
 package com.example.coolweather;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -23,6 +24,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.coolweather.gson.Forecast;
 import com.example.coolweather.gson.Weather;
+import com.example.coolweather.service.AutoUpdateService;
 import com.example.coolweather.util.HttpUtil;
 import com.example.coolweather.util.Utility;
 
@@ -51,6 +53,7 @@ public class WeatherActivity extends AppCompatActivity {
     public SwipeRefreshLayout swipeRefreshLayout;
     public DrawerLayout drawerlayout;
     private Button navButton;
+    private String mWeatherId;
     public static final String BASE_API = "http://guolin.tech/api/weather?cityid=";
     public static final String BINGPIC_URL = "http://guolin.tech/api/bing_pic";
 
@@ -87,7 +90,6 @@ public class WeatherActivity extends AppCompatActivity {
         drawerlayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navButton = (Button) findViewById(R.id.nav_button);
         navButton.setOnClickListener(new NavBtnOnClickListener());
-        final String weatherId;
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         String weatherString = preferences.getString("weather", null);
         String bingPic = preferences.getString("bing_pic", null);
@@ -100,18 +102,18 @@ public class WeatherActivity extends AppCompatActivity {
         if (weatherString != null){
             //有缓存直接解析天气数据
             Weather weather = Utility.handleWeatherResponse(weatherString);
-            weatherId = weather.getBasic().getWeatherId();
+            mWeatherId = weather.getBasic().getWeatherId();
             showWeatherInfo(weather);
         }else{
             //无缓存时去服务器查询天气
-            weatherId = getIntent().getStringExtra("weather_id");
+            mWeatherId = getIntent().getStringExtra("weather_id");
             weatherLayout.setVisibility(View.INVISIBLE);
-            requestWeather(weatherId);
+            requestWeather(mWeatherId);
         }
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                requestWeather(weatherId);
+                requestWeather(mWeatherId);
             }
         });
     }
@@ -154,6 +156,7 @@ public class WeatherActivity extends AppCompatActivity {
                             SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(WeatherActivity.this).edit();
                             editor.putString("weather", responseText);
                             editor.apply();
+                            mWeatherId = weather.getBasic().getWeatherId();
                             showWeatherInfo(weather);
                         }else{
                             Toast.makeText(WeatherActivity.this, "获取天气信息失败", Toast.LENGTH_SHORT).show();
@@ -199,38 +202,44 @@ public class WeatherActivity extends AppCompatActivity {
      * @param weather
      */
     private void showWeatherInfo(Weather weather){
-        String cityName = weather.getBasic().getCityName();
-        String updateTime = weather.getBasic().getUpdate().getLoc().split(" ")[1];
-        String degree = weather.getNow().getTemperature() + "°C";
-        String weatherInfo = weather.getNow().getMore().getInfo();
-        titleCity.setText(cityName);
-        titleUpdateTime.setText(updateTime);
-        degreeText.setText(degree);
-        weatherInfoText.setText(weatherInfo);
-        forecastLayout.removeAllViews();
-        for (Forecast forecast : weather.getForecastList()){
-            View view = LayoutInflater.from(this).inflate(R.layout.forecast_item, forecastLayout, false);
-            TextView dateText = (TextView) view.findViewById(R.id.date_text);
-            TextView infoText = (TextView) view.findViewById(R.id.info_text);
-            TextView maxText = (TextView) view.findViewById(R.id.max_text);
-            TextView minText = (TextView) view.findViewById(R.id.min_text);
-            dateText.setText(forecast.getDate());
-            infoText.setText(forecast.getMore().getInfo());
-            maxText.setText(forecast.getTemperature().getMax());
-            minText.setText(forecast.getTemperature().getMin());
-            forecastLayout.addView(view);
+        if (weather != null & "ok".equals(weather.getStatus())){
+            String cityName = weather.getBasic().getCityName();
+            String updateTime = weather.getBasic().getUpdate().getLoc().split(" ")[1];
+            String degree = weather.getNow().getTemperature() + "°C";
+            String weatherInfo = weather.getNow().getMore().getInfo();
+            titleCity.setText(cityName);
+            titleUpdateTime.setText(updateTime);
+            degreeText.setText(degree);
+            weatherInfoText.setText(weatherInfo);
+            forecastLayout.removeAllViews();
+            for (Forecast forecast : weather.getForecastList()){
+                View view = LayoutInflater.from(this).inflate(R.layout.forecast_item, forecastLayout, false);
+                TextView dateText = (TextView) view.findViewById(R.id.date_text);
+                TextView infoText = (TextView) view.findViewById(R.id.info_text);
+                TextView maxText = (TextView) view.findViewById(R.id.max_text);
+                TextView minText = (TextView) view.findViewById(R.id.min_text);
+                dateText.setText(forecast.getDate());
+                infoText.setText(forecast.getMore().getInfo());
+                maxText.setText(forecast.getTemperature().getMax());
+                minText.setText(forecast.getTemperature().getMin());
+                forecastLayout.addView(view);
+            }
+            if (weather.getAqi() != null){
+                aqiText.setText(weather.getAqi().getCity().getAqi());
+                pm25Text.setText(weather.getAqi().getCity().getPm25());
+            }
+            String comfore = "舒适度: " + weather.getSuggestion().getComfort().getInfo();
+            String carWash = "洗车指数: " + weather.getSuggestion().getCarWash().getInfo();
+            String sport = "运动建议: " + weather.getSuggestion().getSport().getInfo();
+            comfortText.setText(comfore);
+            carWashText.setText(carWash);
+            sportText.setText(sport);
+            weatherLayout.setVisibility(View.VISIBLE);
+            Intent intent = new Intent(this, AutoUpdateService.class);
+            startService(intent);
+        }else{
+            Toast.makeText(this, "获取天气信息失败", Toast.LENGTH_SHORT).show();
         }
-        if (weather.getAqi() != null){
-            aqiText.setText(weather.getAqi().getCity().getAqi());
-            pm25Text.setText(weather.getAqi().getCity().getPm25());
-        }
-        String comfore = "舒适度: " + weather.getSuggestion().getComfort().getInfo();
-        String carWash = "洗车指数: " + weather.getSuggestion().getCarWash().getInfo();
-        String sport = "运动建议: " + weather.getSuggestion().getSport().getInfo();
-        comfortText.setText(comfore);
-        carWashText.setText(carWash);
-        sportText.setText(sport);
-        weatherLayout.setVisibility(View.VISIBLE);
     }
 
     class NavBtnOnClickListener implements View.OnClickListener{

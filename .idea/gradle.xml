@@ -12,6 +12,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/coolweather" />
             <option value="$PROJECT_DIR$/learnjni" />
+            <option value="$PROJECT_DIR$/materialtest" />
+            <option value="$PROJECT_DIR$/pulltorefershtest" />
             <option value="$PROJECT_DIR$/事件分发小案例" />
           </set>
         </option>
