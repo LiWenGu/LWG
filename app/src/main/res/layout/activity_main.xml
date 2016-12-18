@@ -37,15 +37,4 @@
         android:layout_height="wrap_content"
         android:onClick="fifth_Project" />
 
-    <Button
-        android:text="第六关：Material Design之谜"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="sixth_Project" />
-
-    <Button
-        android:text="第七关：PullToRefresh之谜"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="seventh_Pull" />
 </LinearLayout>

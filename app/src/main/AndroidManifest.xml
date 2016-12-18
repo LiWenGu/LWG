@@ -39,7 +39,6 @@
         <activity android:name=".d_H5.H5_z_b_JsCallJavaVideoActivity" />
         <activity android:name=".d_H5.H5_z_c_JsCallJavaCallPhoneActivity" />
         <activity android:name=".e_Project.Project_Activity" />
-        <activity android:name=".f_New.New_a_Material" />
     </application>
 
 </manifest>

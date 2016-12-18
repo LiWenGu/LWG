@@ -9,6 +9,21 @@
         android:id="@+id/e_a_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="特别蠢的天气app"/>
+        android:text="Material Design"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/e_b_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="天气app"/>
+
+    <Button
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/e_c_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JNI调用"/>
 
 </LinearLayout>

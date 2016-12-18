@@ -10,7 +10,6 @@ import com.example.liwenguang.lwg.b_Okhttp.OkHttpActivity;
 import com.example.liwenguang.lwg.c_CustomView.Custom_Mainactivity;
 import com.example.liwenguang.lwg.d_H5.H5_Activity;
 import com.example.liwenguang.lwg.e_Project.Project_Activity;
-import com.example.liwenguang.lwg.f_New.New_a_Material;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,11 +39,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, Project_Activity.class));
     }
 
-    public void sixth_Project(View view){
-        startActivity(new Intent(this, New_a_Material.class));
-    }
 
-    public void seventh_Pull(View view){
-        startActivity(new Intent(this, New_a_Material.class));
-    }
 }

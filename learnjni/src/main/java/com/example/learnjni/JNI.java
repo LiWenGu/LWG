@@ -7,14 +7,34 @@ package com.example.learnjni;
 public class JNI {
 
     {
-        System.loadLibrary("hello");
+        System.loadLibrary("nativehello-lib");
     }
+
     /**
-     * 定义native方法
-     * 调用C代码对应的方法
+     * 让C代码做加法计算，把结果返回
+     * @param x
+     * @param y
      * @return
      */
+    public native int sum(int x, int y);
 
-    public native String sayHello();
+    /**
+     * 从Java传入字符串，让C代码进行拼接
+     * @param s
+     * @return
+     */
+    public native String sayHello(String s);
 
+    /**
+     * 让C代码给每个元素都加上10
+     * @param intArray
+     * @return
+     */
+    public native int[] increaseArrayElements(int[] intArray);
+
+    public native int checkPwd(String psw);
+
+    public native int getPressure();
+
+    public native void uninstall(String packName, int sdkVersion);
 }
